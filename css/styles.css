@@ -245,7 +245,9 @@ img{
 @media (max-width: 768px) {
 
     /* HEADER */
-
+    .logo__nombre{
+        margin-bottom: 2rem;
+    }
     .header__texto{
         margin-top: 5rem;
     }
