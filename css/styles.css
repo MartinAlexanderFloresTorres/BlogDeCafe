@@ -140,8 +140,8 @@ img{
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 2rem;
-    border: none;
     cursor: pointer;
+    border: 1px solid var(--blanco);
 }
 .boton--primario{
     background-color: var(--negro);
@@ -230,10 +230,16 @@ img{
     outline: none;
     border: 1px solid var(--gris);
     padding-left: 10px;
+    border-radius: 1rem;
 }
 .input__field--textarea{
     height: 15rem;
     padding: 10px;
+    border-radius: 1rem;
+}
+.input__field:hover,
+.input__field--textarea:hover{
+    border: 1px solid #8f8fd1;
 }
 
 @media (max-width: 1032px) {
