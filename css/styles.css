@@ -239,7 +239,8 @@ img{
 }
 .input__field:hover,
 .input__field--textarea:hover{
-    border: 1px solid #8f8fd1;
+    border: 1px solid var(--gris);
+    box-shadow: 0 0 5px 0px var(--negro);
 }
 
 @media (max-width: 1032px) {
