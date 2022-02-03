@@ -108,6 +108,13 @@ img{
     color: var(--blanco);
     font-size: 2rem;
 }
+.navegacion__enlace--color{
+    font-weight: bold;
+}
+
+.navegacion__enlace:hover{
+    font-weight: bolder;
+}
 .navegacion{
     display: flex;
     gap: 2rem;
@@ -125,6 +132,12 @@ img{
 .entrada{
     border-bottom: 1px solid var(--gris);
     margin-bottom: 2rem;
+}
+.cafe{
+    float: left;
+    width: 400px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 .entrada:last-of-type{
     border: none;
@@ -183,7 +196,8 @@ img{
 .sobre-nosotros__texto img{
     float: left;
     width: 50%;
-    margin: 2rem;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 /* CURSO */
@@ -230,12 +244,18 @@ img{
     outline: none;
     border: 1px solid var(--gris);
     padding-left: 10px;
+    border-radius: 5px;
 }
 .input__field--textarea{
     height: 15rem;
     padding: 10px;
+    border-radius: 5px;
 }
-
+.input__field:hover,
+.input__field--textarea:hover{
+    border: 2px solid #3a3a3a;
+    transition: 0.1s all ease;
+}
 @media (max-width: 1032px) {
     .curso{
         grid-template-columns: 1fr 1fr;
