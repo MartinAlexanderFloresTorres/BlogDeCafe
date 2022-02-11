@@ -5,8 +5,13 @@
     --primario: #683f2f;
     --blanco: #ffffff;
     --negro: #000000;
+    --negro-oscuro: #0f0f0f;
     --gris: #dbdbdb;
+    --gris--formulario: #292929;
     --negro-trasparente: #0000003f;
+    --black-formulario: #0f0f0f;
+    --white-formulario: #fff;
+
 }
 html {
     box-sizing: border-box;
@@ -22,6 +27,16 @@ body {
     font-family: var(--FuentesParrafos);
     font-size: 1.6rem;
     line-height: 2;
+    background-color: var(--negro-oscuro);
+    color: var(--blanco);
+}
+body.claro{
+    background-color: var(--blanco);
+    color: var(--negro);
+    --gris: #000;
+    --gris--formulario: #e9e9e9;
+    --black-formulario: #0f0f0f;
+    --white-formulario: #fff;
 }
 
 /* GLOBALES */
@@ -133,10 +148,40 @@ img {
 }
 .navegacion {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 .vh {
     min-height: 100vh;
+}
+
+.tema-iconos{
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.tema-iconos i{
+    color:var(--blanco);
+    position: absolute;
+    font-size: 30px;
+    transition: 0.3s ease all;
+}
+.tema-iconos .claro{
+    opacity: 1;
+}
+.tema-iconos .oscuro{
+    opacity: 0;
+}
+.tema-iconos.active .claro{
+    opacity: 0;
+}
+.tema-iconos.active .oscuro{
+    opacity: 1;
 }
 /* CONTENIDO-PRINCIPAL */
 
@@ -239,11 +284,13 @@ img {
     background-position: center;
 }
 .formulario {
-    background-color: var(--blanco);
+    background-color: var(--black-formulario);
+    color: var(--white-formulario);
     width: 90%;
     margin: 0 auto;
     margin-top: -5rem;
     padding: 5rem;
+    box-shadow: 0 0 2px var(--gris);
 }
 .campo {
     display: flex;
@@ -258,7 +305,7 @@ img {
 .input__field {
     width: 100%;
     outline: none;
-    border: 1px solid var(--gris);
+    border: none;
     padding-left: 10px;
     border-radius: 5px;
 }
@@ -267,11 +314,11 @@ img {
     padding: 10px;
     border-radius: 5px;
 }
-.input__field:hover,
-.input__field--textarea:hover {
-    border: 0.7px solid #3a3a3a;
-    border-bottom: 2px solid #3a3a3a;
-    transition: 0.1s all ease;
+
+.input__field,
+.input__field--textarea{
+    background-color: var(--gris--formulario);
+    color: var(--gris);
 }
 @media (max-width: 1032px) {
     .curso {
@@ -307,7 +354,6 @@ img {
         align-items: center;
         justify-content: space-between;
         padding: 10px;
-        z-index: 100;
         background-color: var(--negro);
     }
 
@@ -373,15 +419,23 @@ img {
     .menubar.active .bar::before {
         bottom: 0;
     }
+
+    .tema-iconos{
+        height: 70px;
+        margin-right: 50px;
+        position: fixed;
+        top: 0;
+        right: 25px;
+        z-index: 100;
+    }
     .nav {
         position: fixed;
         top: -100%;
         left: 0;
         width: 100%;
-        transition: 0.4s ease;
-        transition-property: top;
         background-color: var(--negro);
         padding: 10px 0;
+        overflow: hidden;
     }
     .nav.active {
         top: 70px;
@@ -460,5 +514,29 @@ img {
     }
     .header {
         height: 48rem;
+    }
+}
+
+@media (max-width: 315px) {
+    .tema-iconos{
+        height: 70px;
+        margin-right: 50px;
+        position: absolute;
+        top: 0;
+        right:2px;
+        margin: 0;
+    }
+    .menubar{
+        width:35px ;
+        height: 35px;
+    }
+    .bar{
+        width: 20px;
+    }
+    .bar::after{
+        top: 5px;
+    }
+    .bar::before{
+        bottom: 5px;
     }
 }
